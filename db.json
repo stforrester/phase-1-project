@@ -1,0 +1,26 @@
+{
+    "characters": [
+        {
+            "id": 1,
+            "name": "Woodrow F. Call",
+            "image": "",
+            "nationality": "Texas",
+            "allegiance": "Texas Rangers",
+            "age": 66,
+            "status": "Alive",
+            "location": "Lonesome Dove, TX",
+            "reader_comment": ""
+        },
+        {
+            "id": 2,
+            "name": "Augustus McCrae",
+            "image": "",
+            "nationality": "Texas",
+            "allegiance": "Texas Rangers",
+            "age": 68,
+            "status": "Alive",
+            "location": "Lonesome Dove, TX",
+            "reader_comment": ""
+        }
+    ]
+}

@@ -1,3 +1,11 @@
+#character_detail {
+    position: relative;
+}
+
 .detail_image {
     height: 350px;
+}
+
+.name {
+    bottom: 60px;
 }

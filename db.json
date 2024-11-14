@@ -13,7 +13,7 @@
     {
       "name": "Augustus McCrae",
       "image": "./assets/characters/AugustusMcCrae.jpg",
-      "nationality": "Texas",
+      "nationality": "Tennessee",
       "allegiance": "Texas Rangers",
       "age": 68,
       "status": "Alive",
@@ -21,14 +21,54 @@
       "id": 2
     },
     {
-      "name": "Lorena Wood Parker",
+      "name": "Lorena Wood",
       "image": "./assets/characters/LorenaWoodParker.jpg",
       "nationality": "Alabama",
       "allegiance": "Unaffiliated",
       "age": "27",
       "status": "Alive",
-      "location": "High Plains",
+      "location": "Lonesome Dove, TX",
       "id": 3
+    },
+    {
+      "name": "Pea Eye",
+      "image": "./assets/characters/PeaEyeParker.jpg",
+      "nationality": "Texas",
+      "allegiance": "Texas Rangers",
+      "age": "55",
+      "status": "Alive",
+      "location": "Lonesome Dove, TX",
+      "id": 4
+    },
+    {
+      "name": "Deets",
+      "image": "./assets/characters/Deets.jpg",
+      "nationality": "Texas",
+      "allegiance": "Texas Rangers",
+      "age": "53",
+      "status": "Alive",
+      "location": "Lonesome Dove, TX",
+      "id": 5
+    },
+    {
+      "name": "Dish Boggett",
+      "image": "./assets/characters/DishBoggett.jpg",
+      "nationality": "Texas",
+      "allegiance": "Hat Creek Cattle Co.",
+      "age": "33",
+      "status": "Alive",
+      "location": "Lonesome Dove, TX",
+      "id": 6
+    },
+    {
+      "name": "Newt Dobbs",
+      "image": "./assets/characters/NewtDobbs.jpg",
+      "nationality": "Texas",
+      "allegiance": "Hat Creek Cattle Co.",
+      "age": "16",
+      "status": "Alive",
+      "location": "Lonesome Dove, TX",
+      "id": 6
     }
   ],
   "pageNumber": [

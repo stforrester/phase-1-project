@@ -3,6 +3,7 @@
 ////////////////
 
 const characterURL = "http://localhost:3000/characters"
+const pageNumberUrl = "http://localhost:3000/pageNumber"
 
 //////////////////
 // DOM Selectors
@@ -16,6 +17,7 @@ const age = document.querySelector("#age");
 const characterStatus = document.querySelector("#status");
 const characterLocation = document.querySelector("#location");
 const form = document.querySelector("#character_form");
+const toggleFormButton = document.querySelector("#toggleCharacterForm");
 
 ////////////////////////////
 /// Fetch functions
@@ -74,6 +76,15 @@ function handleSubmit(event) {
     form.reset();
 }
 
+function toggleForm() {
+    const isHidden = form.classList.toggle("collapsed");
+    if (isHidden) {
+        toggleFormButton.textContent = "Add New Character"
+    } else {
+        toggleFormButton.textContent = "Collapse Character Form"
+    }
+}
+
 /////////////////////
 // Render Functions
 /////////////////////
@@ -86,7 +97,13 @@ function initialPageRender () {
     .then((data) => displayCharacters(data));
 }
 
+
+//////////////////////////////
+// Standalone Event Listeners
+//////////////////////////////
 form.addEventListener('submit', handleSubmit);
+
+toggleFormButton.addEventListener('click',toggleForm)
 
 ////////////////////
 //Initializer

@@ -10,13 +10,18 @@
         <h3>Welcome to</h3>
         <h1>The Hat Creek Cattle Co. Character DB</h1>
     </header>
+    <p>
+        <span id="pageNumberText" class="pageNumberLine">You are currently on page:</span>
+        <span id="pageNumber" class="pageNumberLine">0</span>
+    </p>
+    <p>Please select a character from the options below to view their details:</p>
     <div id="character_selection_window">
 
     </div>
     <div id="character_detail">
         <div class="container">
-            <img class ="detail_image" src="./assets/image-placeholder.jpg" alt="Detail Image of Character" />
-            <div id="name">Character Name Here</div>
+            <img class ="detail_image" src="./assets/LonesomeDoveCover.jpg" alt="Detail Image of Character" />
+            <div id="name"></div>
         </div>
         <h2>Character Bio:</h2>
         <div class ="bioDetails">
@@ -27,8 +32,9 @@
             <p id="location" class="bioDetails">Location: </p>
         </div>
     </div>
+    <button id="toggleCharacterForm">Add New Character</button>
     <div id="form_wrapper">
-        <form id="character_form">
+        <form id="character_form" class="collapsed">
 
             <label for="name">Name:</label>
             <input type="text" id="form_name" name="name" />

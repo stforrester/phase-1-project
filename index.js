@@ -1,9 +1,9 @@
-/////////////////
-// Global
-////////////////
+///////////////////
+// Server Endpoints
+///////////////////
 
 const characterURL = "http://localhost:3000/characters"
-const pageNumberUrl = "http://localhost:3000/pageNumber"
+const pageNumberURL = "http://localhost:3000/pageNumber"
 
 //////////////////
 // DOM Selectors
@@ -18,10 +18,16 @@ const characterStatus = document.querySelector("#status");
 const characterLocation = document.querySelector("#location");
 const form = document.querySelector("#character_form");
 const toggleFormButton = document.querySelector("#toggleCharacterForm");
+const pageNumber = document.querySelector("#pageNumber");
 
 ////////////////////////////
 /// Fetch functions
 ////////////////////////////
+function getPageNumber(url) {
+    return fetch(url)
+    .then((resp) => resp.json())
+}
+
 function getAllCharacters(url) {
     return fetch(url)
     .then((resp) => resp.json())
@@ -88,15 +94,21 @@ function toggleForm() {
 /////////////////////
 // Render Functions
 /////////////////////
+function displayPageNumber(pageNumberArray) {
+    pageNumber.textContent = pageNumberArray[0];
+}
+
 function displayCharacters(characterArray) {
     characterArray.forEach(renderInSelectionWindow);
 }
 
 function initialPageRender () {
+    getPageNumber(pageNumberURL)
+    .then((data) => displayPageNumber(data));
+    
     getAllCharacters(characterURL)
     .then((data) => displayCharacters(data));
 }
-
 
 //////////////////////////////
 // Standalone Event Listeners
@@ -108,5 +120,6 @@ toggleFormButton.addEventListener('click',toggleForm)
 ////////////////////
 //Initializer
 ////////////////////
+
 initialPageRender();
 

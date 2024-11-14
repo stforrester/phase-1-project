@@ -13,7 +13,14 @@
     <p>
         <span id="pageNumberText" class="pageNumberLine">You are currently on page:</span>
         <span id="pageNumber" class="pageNumberLine"></span>
+        <span><button id="togglePageNumberForm">Update Page</button></span>
     </p>
+    <form id="pageForm" class="collapsed">
+        <label for="formPageNumber">Page Number:</label>
+        <input type="text" id="form_PageNumber" name="formPageNumber" />
+
+        <input type ="submit" value="Update Page" />
+    </form>
     <p>Please select a character from the options below to view their details:</p>
     <div id="character_selection_window">
 

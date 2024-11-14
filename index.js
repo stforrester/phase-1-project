@@ -19,6 +19,8 @@ const characterLocation = document.querySelector("#location");
 const form = document.querySelector("#character_form");
 const toggleFormButton = document.querySelector("#toggleCharacterForm");
 const pageNumber = document.querySelector("#pageNumber");
+const pageNumberForm = document.querySelector("#pageForm");
+const togglePageNumberFormButton = document.querySelector("#togglePageNumberForm");
 
 ////////////////////////////
 /// Fetch functions
@@ -26,6 +28,19 @@ const pageNumber = document.querySelector("#pageNumber");
 function getPageNumber(url) {
     return fetch(url)
     .then((resp) => resp.json())
+}
+
+function updatePageNumber(pageObj) {
+    fetch(`${pageNumberURL}/1`, {
+        method: 'PATCH',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(pageObj)
+    })
+    .then((resp) => resp.json())
+    .then((data) => console.log(data));
 }
 
 function getAllCharacters(url) {
@@ -38,7 +53,7 @@ function addNewCharacter(characterObj) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
+            "Accept": "application/json"
         },
         body: JSON.stringify(characterObj)
     })
@@ -67,6 +82,15 @@ function renderInSelectionWindow(characterObj) {
     selectionWindow.append(img);
 }
 
+function handlePageSubmit(event) {
+    event.preventDefault();
+    let pageObj = {page: event.target.form_PageNumber.value}
+    //console.log(pageObj)
+    updatePageNumber(pageObj);
+    
+    pageNumberForm.reset();
+}
+
 function handleSubmit(event) {
     event.preventDefault();
     let characterObj = {
@@ -82,6 +106,15 @@ function handleSubmit(event) {
     form.reset();
 }
 
+function togglePageNumberForm() {
+    const isHidden = pageNumberForm.classList.toggle("collapsed");
+    if (isHidden) {
+        togglePageNumberFormButton.textContent = "Update Page"
+    } else {
+        togglePageNumberFormButton.textContent = "Collapse Form"
+    }
+}
+
 function toggleForm() {
     const isHidden = form.classList.toggle("collapsed");
     if (isHidden) {
@@ -95,7 +128,7 @@ function toggleForm() {
 // Render Functions
 /////////////////////
 function displayPageNumber(pageNumberArray) {
-    pageNumber.textContent = pageNumberArray[0];
+    pageNumber.textContent = pageNumberArray[0].page;
 }
 
 function displayCharacters(characterArray) {
@@ -115,7 +148,11 @@ function initialPageRender () {
 //////////////////////////////
 form.addEventListener('submit', handleSubmit);
 
-toggleFormButton.addEventListener('click',toggleForm)
+pageNumberForm.addEventListener('submit', handlePageSubmit);
+
+togglePageNumberFormButton.addEventListener('click', togglePageNumberForm)
+
+toggleFormButton.addEventListener('click', toggleForm)
 
 ////////////////////
 //Initializer

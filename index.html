@@ -3,7 +3,7 @@
 <head>
     <title>Lonesome Dove Character DB</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
 </head>
 <body>
     <header class = "main_header">
@@ -13,7 +13,7 @@
     <p>
         <span id="pageNumberText" class="pageNumberLine">You are currently on page:</span>
         <span id="pageNumber" class="pageNumberLine"></span>
-        <span><button id="togglePageNumberForm">Update Page</button></span>
+        <span><button id="togglePageNumberForm">Update Page #</button></span>
     </p>
     <form id="pageForm" class="collapsed">
         <label for="formPageNumber">Page Number:</label>
@@ -32,7 +32,7 @@
         </div>
         <h2>Character Bio:</h2>
         <div class ="bioDetails">
-            <p id="nationality" class="bioDetails">Nationality: </p>
+            <p id="nationality" class="bioDetails">State or Country of Origin: </p>
             <p id="allegiance" class="bioDetails">Allegiance: </p>
             <p id="age" class="bioDetails">Age: </p>
             <p id="status" class="bioDetails">Dead or Alive: </p>
@@ -49,7 +49,7 @@
             <label for="image_source">Image Source:</label>
             <input type="text" id="form_image" name="image_source" />
 
-            <label for="nationality">Nationality:</label>
+            <label for="nationality">State/Country of Origin:</label>
             <input type="text" id="form_nationality" name="nationality" />
 
             <label for="allegiance">Allegiance:</label>

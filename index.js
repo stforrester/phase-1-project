@@ -7,7 +7,7 @@ const pageNumberURL = "http://localhost:3000/pageNumber"
 
 //////////////////
 // DOM Selectors
-/////////////////
+/////////////////  
 const selectionWindow = document.querySelector("#character_selection_window");
 const detailImg = document.querySelector(".detail_image");
 const characterName = document.querySelector("#name");
@@ -67,7 +67,7 @@ function addNewCharacter(characterObj) {
 function characterDetails(characterObj) {
     detailImg.src = characterObj.image;
     characterName.textContent = characterObj.name;
-    nationality.textContent = `Nationality: ${characterObj.nationality}`;
+    nationality.textContent = `State or Country of Origin: ${characterObj.nationality}`;
     allegiance.textContent = `Allegiance: ${characterObj.allegiance}`;
     age.textContent = `Age: ${characterObj.age}`;
     characterStatus.textContent = `Dead or Alive: ${characterObj.status}`;
@@ -81,15 +81,13 @@ function renderInSelectionWindow(characterObj) {
     img.addEventListener('click', (event) => {
         event.stopPropagation();
         characterDetails(characterObj)});
-    selectionWindow.append(img);
+    selectionWindow.appendChild(img);
 }
 
 function handlePageSubmit(event) {
-    debugger
     event.stopPropagation();
     event.preventDefault();
     let pageObj = {page: event.target.form_PageNumber.value}
-    console.log(pageObj)
     updatePageNumber(pageObj);
     pageNumberForm.reset();
 }

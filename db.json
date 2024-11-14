@@ -69,11 +69,21 @@
       "status": "Alive",
       "location": "Lonesome Dove, TX",
       "id": 6
+    },
+    {
+      "name": "Big Zwey",
+      "image": "./assets/characters/BigZwey.jpg",
+      "nationality": "Arkansas",
+      "allegiance": "Buffalo Hunter",
+      "age": "34",
+      "status": "Alive",
+      "location": "Nebraska Wilderness",
+      "id": 7
     }
   ],
   "pageNumber": [
     {
-      "page": "0",
+      "page": "478",
       "id": 1
     }
   ]

@@ -1,26 +1,37 @@
 {
-    "characters": [
-        {
-            "id": 1,
-            "name": "Woodrow F. Call",
-            "image": "",
-            "nationality": "Texas",
-            "allegiance": "Texas Rangers",
-            "age": 66,
-            "status": "Alive",
-            "location": "Lonesome Dove, TX",
-            "reader_comment": ""
-        },
-        {
-            "id": 2,
-            "name": "Augustus McCrae",
-            "image": "",
-            "nationality": "Texas",
-            "allegiance": "Texas Rangers",
-            "age": 68,
-            "status": "Alive",
-            "location": "Lonesome Dove, TX",
-            "reader_comment": ""
-        }
-    ]
+  "characters": [
+    {
+      "name": "Woodrow F. Call",
+      "image": "./assets/characters/WoodrowCall.jpg",
+      "nationality": "Texas",
+      "allegiance": "Texas Rangers",
+      "age": 66,
+      "status": "Alive",
+      "location": "Lonesome Dove, TX",
+      "id": 1
+    },
+    {
+      "name": "Augustus McCrae",
+      "image": "./assets/characters/AugustusMcCrae.jpg",
+      "nationality": "Texas",
+      "allegiance": "Texas Rangers",
+      "age": 68,
+      "status": "Alive",
+      "location": "Lonesome Dove, TX",
+      "id": 2
+    },
+    {
+      "name": "Lorena Wood Parker",
+      "image": "./assets/characters/LorenaWoodParker.jpg",
+      "nationality": "Alabama",
+      "allegiance": "Unaffiliated",
+      "age": "27",
+      "status": "Alive",
+      "location": "High Plains",
+      "id": 3
+    }
+  ],
+  "pageNumber": [
+    0
+  ]
 }

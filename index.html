@@ -3,26 +3,57 @@
 <head>
     <title>Lonesome Dove Character DB</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script defer src="index.js"></script>
 </head>
 <body>
-    <header>
+    <header class = "main_header">
         <h3>Welcome to</h3>
-        <h1>the Hat Creek Cattle Co. Character DB</h1>
+        <h1>The Hat Creek Cattle Co. Character DB</h1>
     </header>
-    <div id="character_selection_window"></div>
+    <div id="character_selection_window">
+
+    </div>
     <div id="character_detail">
-        <h2>Character Picture:</h2>
-        <img class ="detail_image" src="./assets/image-placeholder.jpg" alt="Insert Character Image Here" />
-        <h3 class="name">Insert Character Name Here</h3>
-        <h2>Bio:
-            <ul>
-                <li>Nationality: </li>
-                <li>Allegiance: </li>
-                <li>Age: </li>
-                <li>Dead or Alive? </li>
-                <li>Location: </li>
-            </ul>
-        </h2>
+        <div class="container">
+            <img class ="detail_image" src="./assets/image-placeholder.jpg" alt="Detail Image of Character" />
+            <div id="name">Character Name Here</div>
+        </div>
+        <h2>Character Bio:</h2>
+        <div class ="bioDetails">
+            <p id="nationality" class="bioDetails">Nationality: </p>
+            <p id="allegiance" class="bioDetails">Allegiance: </p>
+            <p id="age" class="bioDetails">Age: </p>
+            <p id="status" class="bioDetails">Dead or Alive: </p>
+            <p id="location" class="bioDetails">Location: </p>
+        </div>
+    </div>
+    <div id="form_wrapper">
+        <form id="character_form">
+
+            <label for="name">Name:</label>
+            <input type="text" id="form_name" name="name" />
+
+            <label for="image_source">Image Source:</label>
+            <input type="text" id="form_image" name="image_source" />
+
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="form_nationality" name="nationality" />
+
+            <label for="allegiance">Allegiance:</label>
+            <input type="text" id="form_allegiance" name="allegiance" />
+
+            <label for="age">Age:</label>
+            <input type="number" id="form_age" name="age" />
+
+            <label for="deadOrAlive">Dead or Alive:</label>
+            <input type="text" id="form_dead_or_alive" name="deadOrAlive" />
+
+            <label for="location">Location:</label>
+            <input type="text" id="form_location" name="location" />
+
+            <input type ="submit" value="Add Character" />
+
+        </form>
     </div>
 </body>
 </html>

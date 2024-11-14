@@ -1,11 +1,44 @@
-#character_detail {
+body {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
     position: relative;
+}
+
+#name {
+    text-align: center;
+    font-size: 25px;
 }
 
 .detail_image {
     height: 350px;
 }
 
-.name {
-    bottom: 60px;
+.main_header {
+    position: relative;
+    text-align: center;
+}
+
+.bioDetails {
+    text-align: justify;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    margin: 3px;
+}
+
+label {
+    text-align: justify;
 }

@@ -40,7 +40,7 @@ function updatePageNumber(pageObj) {
         body: JSON.stringify(pageObj)
     })
     .then((resp) => resp.json())
-    .then((data) => console.log(data));
+    .then((data) => displayPageNumber(data));
 }
 
 function getAllCharacters(url) {
@@ -58,7 +58,7 @@ function addNewCharacter(characterObj) {
         body: JSON.stringify(characterObj)
     })
     .then((resp) => resp.json())
-    .then((data) => console.log(data));
+    .then((data) => renderInSelectionWindow(data));
 }
 
 ///////////////
@@ -78,20 +78,25 @@ function renderInSelectionWindow(characterObj) {
     const img = document.createElement("img");
     img.src = characterObj.image;
     img.style.height = "150px"
-    img.addEventListener('click', () => characterDetails(characterObj));
+    img.addEventListener('click', (event) => {
+        event.stopPropagation();
+        characterDetails(characterObj)});
     selectionWindow.append(img);
 }
 
 function handlePageSubmit(event) {
+    debugger
+    event.stopPropagation();
     event.preventDefault();
     let pageObj = {page: event.target.form_PageNumber.value}
-    //console.log(pageObj)
+    console.log(pageObj)
     updatePageNumber(pageObj);
-    
     pageNumberForm.reset();
 }
 
 function handleSubmit(event) {
+    debugger
+    event.stopPropagation();
     event.preventDefault();
     let characterObj = {
         name: event.target.form_name.value,
@@ -106,7 +111,8 @@ function handleSubmit(event) {
     form.reset();
 }
 
-function togglePageNumberForm() {
+function togglePageNumberForm(event) {
+    event.stopPropagation();
     const isHidden = pageNumberForm.classList.toggle("collapsed");
     if (isHidden) {
         togglePageNumberFormButton.textContent = "Update Page"
@@ -115,7 +121,8 @@ function togglePageNumberForm() {
     }
 }
 
-function toggleForm() {
+function toggleForm(event) {
+    event.stopPropagation();
     const isHidden = form.classList.toggle("collapsed");
     if (isHidden) {
         toggleFormButton.textContent = "Add New Character"
@@ -127,8 +134,8 @@ function toggleForm() {
 /////////////////////
 // Render Functions
 /////////////////////
-function displayPageNumber(pageNumberArray) {
-    pageNumber.textContent = pageNumberArray[0].page;
+function displayPageNumber(pageNumberObj) {
+    pageNumber.textContent = pageNumberObj.page;
 }
 
 function displayCharacters(characterArray) {
@@ -137,7 +144,7 @@ function displayCharacters(characterArray) {
 
 function initialPageRender () {
     getPageNumber(pageNumberURL)
-    .then((data) => displayPageNumber(data));
+    .then((data) => displayPageNumber(data[0]));
     
     getAllCharacters(characterURL)
     .then((data) => displayCharacters(data));
@@ -157,6 +164,6 @@ toggleFormButton.addEventListener('click', toggleForm)
 ////////////////////
 //Initializer
 ////////////////////
-
-initialPageRender();
-
+document.addEventListener("DOMContentLoaded", () => {
+    initialPageRender();
+})
